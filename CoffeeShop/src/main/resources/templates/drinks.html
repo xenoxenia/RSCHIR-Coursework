@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>CoffeeShop</title>
+    <link href="../static/css/style_sweets.css" th:href="@{/css/style_sweets.css}" rel="stylesheet"/>
+</head>
+<body style="margin: 0">
+<div class="header">
+    <div class="header_sec">
+        <a th:href="@{/}">
+            <h1>Миндаль</h1>
+        </a>
+    </div>
+    <div class="header_auth">
+        <i><a href="#" th:href="@{/logout}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></i>
+        <i> <a href="/basket"><img th:src="@{/images/cart.png}" src="../static/images/cart.png"
+                                       width="35vw" height="35vh"></a></i>
+    </div>
+</div>
+<div class="main">
+    <h2>Кофе и напитки</h2>
+    <p>Может хотите зарядиться энергией перед тем, что приготовил Вам день? Или расслабиться после тяжелой рабочей
+        недели в компании
+        друзей, сидя за чашечкой кофе? Наша кофейня готова принять любое Ваше настроение, а наш бариста сделает Вам
+        самый вкусный кофе!
+    </p>
+    <div class="for_products" style="display: flex; justify-content: space-around; flex-wrap: wrap; flex-direction: row;" >
+        <div class="product" th:each="s: ${drinks}">
+            <div class="pic_of_product"><img th:src="@{'/images/drinks/' + ${s.getImageUrl()}}"></div>
+            <div class="pic_and_price">
+                <div class="name_of_product"><h3 th:text="${s.getName()}"/></div>
+                <div class="price_of_product"><p th:text="${s.getPrice()}"/></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+</html>

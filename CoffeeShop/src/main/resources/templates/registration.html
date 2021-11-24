@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Registration</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<style>
+
+body{
+        background-color: hsl(30, 41%, 55%);
+    }
+
+    .container {
+        margin-top: 2em;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 15px;
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 11px;
+        padding-top: 3px;
+    }
+
+    .form-control {
+        height: auto !important;
+        padding: 8px 12px !important;
+    }
+
+    .input-group {
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21) !important;
+    }
+
+    #button {
+        border: 1px solid #ccc;
+        margin-top: 28px;
+        padding: 6px 12px;
+        color: #666;
+        text-shadow: 0 1px #fff;
+        cursor: pointer;
+        border-radius: 3px 3px;
+        box-shadow: 0 1px #fff inset, 0 1px #ddd;
+        background: #f5f5f5;
+        background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+        background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
+    }
+
+    .main-form {
+        margin-top: 30px;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 10px 40px;
+        background: #DDB892;
+        color: #FFF;
+        text-shadow: none;
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
+    }
+
+    span.input-group-addon i {
+        color: #DDB892;
+        font-size: 17px;
+    }
+
+    .login-button {
+        margin-top: 5px;
+    }
+</style>
+<div style="color: red" th:text="${error}"></div>
+<div class="container">
+    <div class="row main-form">
+        <form th:action="@{/registration}" th:method="post" th:object="${user}">
+
+            <div class="form-group">
+                <label for="username" class="cols-sm-2 control-label">Логин</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" name="username" id="username"
+                               placeholder="Enter your Username" th:field="*{username}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="cols-sm-2 control-label">Пароль</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <input type="password" class="form-control" name="password" id="password"
+                               placeholder="Enter your Password" th:field="*{password}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <input type="submit" value="Зарегистрироваться" class="btn btn-primary btn-lg btn-block login-button"/>
+                <a href="/login" target="" type="button" id="button"
+                   class="btn btn-primary btn-lg btn-block login-button">Вход</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>

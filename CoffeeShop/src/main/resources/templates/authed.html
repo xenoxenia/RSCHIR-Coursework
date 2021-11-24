@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>CoffeeShop</title>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body style="margin: 0">
+<div class="header">
+    <div class="header_sec">
+        <a th:href="@{/}">
+            <h1>Миндаль</h1>
+        </a>
+    </div>
+    <div class="header_auth">
+        <i><a href="#" th:href="@{/logout}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></i>
+        <i> <a href="/basket"><img th:src="@{/images/cart.png}" src="../static/images/cart.png" width="35vw"
+                                   height="35vh"></a></i>
+    </div>
+
+</div>
+<div class="main">
+    <div class="description">
+        <div class="out_img"><img th:src="@{/images/deli.jpg}" src="../static/images/deli.jpg" width="600vw"
+                                  height="400vh" alt=""></div>
+        <div class="out_descr">
+            <div class="out_descr_header"><h3>Доставка</h3></div>
+            <div class="out_descr_text">В такое сложное для всего мира время, наше кафе предоставляет возможность
+                заказать напитки и все
+                для их приготовления домой или в офис! <br> Ждем ваших заказов!
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="sweet"><a href="/sweets">Сладкое</a></div>
+        <div class="coffee"><a href="/coffee">Все для вкусного кофе дома</a></div>
+        <div class="drinks"><a href="/drinks">Напитки</a></div>
+
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
